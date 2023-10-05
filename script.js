@@ -48,4 +48,14 @@ async function getPhotos() {
   }
 }
 
+//Check to see if scrolling, load more Photos
+window.addEventListener("scroll", () => {
+  if (
+    window.innerHeight + windows.scrollY >=
+    document.body.offsetHeight - 1000
+  ) {
+    getPhotos();
+  }
+});
+
 getPhotos();
